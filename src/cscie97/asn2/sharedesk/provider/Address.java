@@ -3,7 +3,7 @@ package cscie97.asn2.sharedesk.provider;
 public class Address
 
 {
-	//ISO format
+	//ISO format java.util.Locale
 	private String countryCode;
 	private String street1; 
 	private String street2;
