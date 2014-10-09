@@ -1,6 +1,9 @@
 package cscie97.asn2.sharedesk.provider;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class OfficeSpace
 {
@@ -12,13 +15,14 @@ public class OfficeSpace
 	private List<Image> images;
 	private Location location;
 	private List<Rate> rates;
-	private List<Rating> ratings;
+	private Map<String, Rating> ratings;
+	private String officeSpaceGuid;
 	//office space name
 	private String name; 
 	
 	public OfficeSpace ( List<String> commonAccess, Capacity capacity, Facility facility,
 			            Features features, List<Image> images, Location location,
-			            List<Rate> rates, List<Rating> ratings, String name )
+			            List<Rate> rates, Map<String, Rating> ratings, String name, String officeSpaceGuid )
 	{
 		this.capacity = capacity;
 		this.commonAccess = commonAccess;
@@ -29,6 +33,7 @@ public class OfficeSpace
 		this.name = name;
 		this.rates = rates;
 		this.ratings = ratings;
+		this.officeSpaceGuid = officeSpaceGuid;
 	}
 	
 	public OfficeSpace ()
@@ -40,10 +45,28 @@ public class OfficeSpace
 		this.images = new ArrayList<Image>();
 		this.location = new Location(null, null, null);
 		this.name = "";
+		this.officeSpaceGuid = "";
 		this.rates =  new ArrayList<Rate>();
-		this.ratings = new ArrayList<Rating>();
+		this.ratings = new HashMap<String, Rating>();
 	}
 	
+	/**
+	 * accessor method for officeSpaceGuid attribute
+	 * @return String
+	 */
+	public String getOfficeSpaceGuid ()
+	{
+		return this.officeSpaceGuid;
+	}
+	
+	/**
+	 * mutator method for officeSpaceGuid attribute
+	 * @param officeSpaceGuid
+	 */
+	public void setOfficeSpaceGuid ( String officeSpaceGuid )
+	{
+		this.officeSpaceGuid = officeSpaceGuid;
+	}
 	
 	/**
 	 * mutator method for commonAccess attribute
@@ -177,18 +200,64 @@ public class OfficeSpace
 	 * mutator method for ratings attribute
 	 * @param ratings
 	 */
-	public void setRatings ( List<Rating> ratings )
+	public void setRatings ( Map<String, Rating> ratings )
 	{
 		this.ratings = ratings;
 	}
 	
 	/**
 	 * accessor method for ratings attribute
-	 * @return List<Rating>
+	 * @return Map<String, Rating>
 	 */
-	public List<Rating> geRatings()
+	public Map<String, Rating> getRatings()
 	{
 		return this.ratings;
+	}
+	
+	/**
+	 * getter method for all ratings per office space
+	 * @return List<Rating>
+	 */
+	public List<Rating> getAllRatings()
+	{
+		Collection<Rating> tempSet;
+		tempSet = ratings.values();
+		List<Rating> officeSpaceRatingsList = new ArrayList<Rating> ( tempSet );
+		return officeSpaceRatingsList;
+	}
+	
+	/**
+	 * mutator method for ratings association
+	 * @param ratings
+	 * @throws OfficeSpaceNotFoundException 
+	 */
+	public void setRating( Rating rating, String authorId ) throws RatingNotFoundExcepion
+	{ 
+		if ( ratings.containsKey( authorId ) )
+		{
+			this.ratings.put( authorId, rating );
+		}
+		else
+		{
+			throw new RatingNotFoundExcepion();
+		}
+	}
+	
+	/**
+	 * accessor method for rating association
+	 * @return Rating
+	 * @throws RatingNotFoundExcepion 
+	 */
+	public Rating getRating( String authorId ) throws RatingNotFoundExcepion
+	{
+		if ( ratings.containsKey( authorId ) )
+		{	
+			return this.ratings.get( authorId );
+		}
+		else
+		{
+			throw new RatingNotFoundExcepion();
+		}
 	}
 	
 	/**

@@ -4,18 +4,18 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
+
 
 
 public class OfficeSpaceService
 {
 	
 	private Map<String, OfficeSpace> officeSpaceMap;
-	private List<OfficeSpace> officeSpaceList;
 	
 	public OfficeSpaceService ()
 	{
 		officeSpaceMap = new HashMap<String, OfficeSpace>();	
-		officeSpaceList = new ArrayList<OfficeSpace>();
 	}
 	
 	/**
@@ -45,11 +45,22 @@ public class OfficeSpaceService
 	
 	/**
 	 * accessor method for officeSpaceMap attribute
+	 * if the guid not found in the map, it throws OfficeSpaceNotFoundException exception
+	 * @param authToken
+	 * @param guid
 	 * @return OfficeSpace
+	 * @throws OfficeSpaceNotFoundException
 	 */
-	public OfficeSpace getOfficeSpace ( String authToken, String guid )
+	public OfficeSpace getOfficeSpace ( String authToken, String guid ) throws OfficeSpaceNotFoundException
 	{
-		return this.officeSpaceMap.get( guid );
+		if ( officeSpaceMap.containsKey( guid ) )
+		{
+			return this.officeSpaceMap.get( guid );
+		}
+		else
+		{
+			throw new OfficeSpaceNotFoundException();
+		}
 	}
 	
 	/**
@@ -57,21 +68,164 @@ public class OfficeSpaceService
 	 */
 	public List<OfficeSpace> getOfficeSpaceList ()
 	{
-		return this.officeSpaceList = (List<OfficeSpace>) officeSpaceMap.values();
-		
+		List<OfficeSpace> officeSpaceList = null;
+		officeSpaceList = (List<OfficeSpace>) officeSpaceMap.values();
+		return officeSpaceList;
 	}
 	
+	/**
+	 * 
+	 * @return List<String>
+	 */
+	public List<String> getOfficeSpaceGuidList ()
+	{
+		Set<String> tempSet;
+		tempSet = officeSpaceMap.keySet();
+		List<String> officeSpaceGuidList = new ArrayList<String> ( tempSet );
+		return officeSpaceGuidList;
+	}
+	
+	/**
+	 * updates particular office space in the office space map with a new office space based on guid passed in
+	 * if the guid not found in the map, it throws OfficeSpaceNotFoundException exception
+	 * @param authToken
+	 * @param guid
+	 * @param officeSpaceId
+	 * @param updatedOffice
+	 * @throws OfficeSpaceNotFoundException
+	 */
 	public void updateOfficeSpace ( String authToken, String guid,
-			                        String officeSpaceId , OfficeSpace office)
+			                        String officeSpaceId , OfficeSpace updatedOffice) throws OfficeSpaceNotFoundException
 	{
 		if ( officeSpaceMap.containsKey( guid ) )
 		{
-			officeSpaceMap.put( guid, officeSpace );
+			officeSpaceMap.put( guid, updatedOffice );
 		}
 		else
 		{
-			throw new OfficeSpaceAlreadyExistException();
+			throw new OfficeSpaceNotFoundException();
 		}
 	}
 	
+	/**
+	 * removed particular office space from the office space map based on guid passed in
+	 * if the guid not found in the map, it throws OfficeSpaceNotFoundException exception
+	 * @param authToken
+	 * @param guid
+	 * @param officeSpaceId
+	 * @param updatedOffice
+	 * @throws OfficeSpaceNotFoundException
+	 */
+	public void removeOfficeSpace ( String authToken, String guid,
+                                    String officeSpaceId , OfficeSpace updatedOffice) throws OfficeSpaceNotFoundException
+	{
+		if ( officeSpaceMap.containsKey( guid ) )
+		{
+			officeSpaceMap.remove( guid );
+		}
+		else
+		{
+			throw new OfficeSpaceNotFoundException();
+		}
+	}	
+	
+	/**
+	 * The new Rating is added to officeSpaceRatingMap within the officeSpaceMap,
+	 * if the office space id is not found - OfficeSpaceNotFoundException is thrown;
+	 * if the rater already provided his/her rating - RatingAlreadyExistsException is thrown
+	 * @param authToken
+	 * @param officeSpaceId
+	 * @param rating
+	 * @param renterId
+	 * @throws OfficeSpaceNotFoundException 
+	 * @throws RatingAlreadyExistsException 
+	 */
+	public void rateOfficeSpace ( String authToken, String renterId,
+			                      String officeSpaceId, Rating rating ) throws OfficeSpaceNotFoundException, RatingAlreadyExistsException 
+	{
+		if ( officeSpaceMap.containsKey( officeSpaceId ) )
+		{
+			OfficeSpace tempOfficeSpace;
+            Map<String, Rating> tempOfficeSpaceRatingMap;
+			tempOfficeSpace = officeSpaceMap.get( officeSpaceId );
+			tempOfficeSpaceRatingMap = tempOfficeSpace.getRatings();
+			if ( !tempOfficeSpaceRatingMap.containsKey( renterId ) )
+			{
+				tempOfficeSpaceRatingMap.put(renterId, rating );
+			}
+			else
+			{
+				throw new RatingAlreadyExistsException();
+			}
+			tempOfficeSpace.setRatings( tempOfficeSpaceRatingMap );
+			officeSpaceMap.put( officeSpaceId, tempOfficeSpace );
+		}
+		else
+		{
+			throw new OfficeSpaceNotFoundException();
+		}
+	}
+	
+	/**
+	 * The Rating correspondent to renterId is to be removed from officeSpaceRatingMap within the officeSpaceMap,
+	 * if office space id is not found - OfficeSpaceNotFoundException is thrown;
+	 * if renterId is not found - RatingNotFoundExcepion is thrown
+	 * @param authToken
+	 * @param renterId
+	 * @param officeSpaceId
+	 * @param rating
+	 * @throws OfficeSpaceNotFoundException
+	 * @throws RatingNotFoundExcepion
+	 */
+	public void removeOfficeSpaceRating ( String authToken, String renterId,
+                                          String officeSpaceId ) throws OfficeSpaceNotFoundException, RatingNotFoundExcepion 
+    {
+		if ( officeSpaceMap.containsKey( officeSpaceId ) )
+		{
+			OfficeSpace tempOfficeSpace;
+            Map<String, Rating> tempOfficeSpaceRatingMap;
+			tempOfficeSpace = officeSpaceMap.get( officeSpaceId );
+			tempOfficeSpaceRatingMap = tempOfficeSpace.getRatings();
+			if ( tempOfficeSpaceRatingMap.containsKey( renterId ) )
+			{
+				tempOfficeSpaceRatingMap.remove( renterId );
+			}
+			else
+			{
+				throw new RatingNotFoundExcepion();
+			}
+			tempOfficeSpace.setRatings( tempOfficeSpaceRatingMap );
+			officeSpaceMap.put( officeSpaceId, tempOfficeSpace );
+		}
+		else
+		{
+			throw new OfficeSpaceNotFoundException();
+		}
+    }
+	
+	
+	/**
+	 * Returns the list all Ratings correspondent to office space the officeSpaceMap,
+	 * if the office space id is not found - OfficeSpaceNotFoundException is thrown
+	 * @param authToken
+	 * @param renterId
+	 * @param officeSpaceId
+	 * @return List<Rating>
+	 * @throws OfficeSpaceNotFoundException
+	 */
+	public List<Rating> getOfficeSpaceRatingList  ( String authToken, String officeSpaceId ) throws OfficeSpaceNotFoundException 
+	{
+		if ( officeSpaceMap.containsKey( officeSpaceId ) )
+		{
+			OfficeSpace tempOfficeSpace;
+			tempOfficeSpace = officeSpaceMap.get( officeSpaceId );
+			List<Rating> tempOfficeSpaceRatingList;
+			tempOfficeSpaceRatingList = tempOfficeSpace.getAllRatings();
+			return tempOfficeSpaceRatingList;
+		}
+		else
+		{
+			throw new OfficeSpaceNotFoundException();
+		}
+	}
 }
