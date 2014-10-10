@@ -2,9 +2,9 @@ package cscie97.asn2.sharedesk.provider;
 
 public class Account
 {
-	private String payPalAccountNumber;
+	private Integer payPalAccountNumber;
 	
-	public Account ( String payPalAccountNumber )
+	public Account ( Integer payPalAccountNumber )
 	{
 		this.payPalAccountNumber = payPalAccountNumber;
 	}
@@ -13,16 +13,16 @@ public class Account
 	 * mutator method for payPalAccountNumber attribute
 	 * @param payPalAccountNumber
 	 */
-	public void setPayPalAccountNumber ( String payPalAccountNumber )
+	public void setPayPalAccountNumber ( Integer payPalAccountNumber )
 	{
 		this.payPalAccountNumber = payPalAccountNumber;
 	}
 	
 	/**
 	 * accessor method for payPalAccountNumber attribute
-	 * @return String
+	 * @return Integer
 	 */
-	public String getPayPalAccountNumber ()
+	public Integer getPayPalAccountNumber ()
 	{
 		return this.payPalAccountNumber;
 	}

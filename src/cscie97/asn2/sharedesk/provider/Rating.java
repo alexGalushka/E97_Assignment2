@@ -3,18 +3,37 @@ package cscie97.asn2.sharedesk.provider;
 public class Rating 
 {
 
+	private String authorsName;
 	private String authorsId;
 	private String comment;
 	private String date;
 	private Integer stars;
 	
-	public Rating (	String authorsId, String comment,
+	public Rating (	String authorsName, String comment,
 			        String date, Integer stars )
 	{
-		this.authorsId = authorsId;
+		this.authorsName = authorsName;
 		this.comment = comment;
 		this.date = date;
 		this.stars = stars;
+	}
+	
+	/**
+	 * mutator method for authorsName attribute
+	 * @param period
+	 */
+	public void setAuthorsName ( String authorsName )
+	{
+		this.authorsName = authorsName;
+	}
+	
+	/**
+	 * accessor method for authorsName attribute
+	 * @return String
+	 */
+	public String getAuthorsName ()
+	{
+		return this.authorsName;
 	}
 	
 	/**

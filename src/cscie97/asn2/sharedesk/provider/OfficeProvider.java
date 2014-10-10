@@ -8,7 +8,6 @@ import java.util.Map;
 
 public class OfficeProvider 
 {
-	private String name;
 	private URI picture;
 	private ContactInfo contact;
 	private Map<String, OfficeSpace> officeSpacesMap;
@@ -16,27 +15,25 @@ public class OfficeProvider
 	private Account account;
 	private String officeProviderGuid;
 	
-	
 	public OfficeProvider ()
 	{
-		this.name = "";
 		this.picture = null;
 		this.contact = new ContactInfo("", "", "", "", "", null);
 		this.officeSpacesMap = new HashMap<String, OfficeSpace>();
-		this.account = new Account("");
+		this.account = new Account( 0 );
 		this.officeProviderGuid = "";
 	}
 	
-	public OfficeProvider ( String name, URI picture, ContactInfo contact,
+	public OfficeProvider ( URI picture, ContactInfo contact,
 			               Map<String, OfficeSpace> officeSpaces, Account account, String officeProviderGuid )
 	{
-		this.name = name;
 		this.picture = picture;
 		this.contact = contact;
 		this.officeSpacesMap = officeSpaces;
 		this.account = account;
 		this.officeProviderGuid = officeProviderGuid;
 	}
+	
 	
 	/**
 	 * mutator method for officeProviderGuid attribute
@@ -158,22 +155,5 @@ public class OfficeProvider
 		return this.picture;
 	}
 	
-	/**
-	 * mutator method for name attribute
-	 * @param name
-	 */
-	public void setName ( String name )
-	{
-		this.name = name;
-	}
-	
-	/**
-	 * accessor method for name attribute
-	 * @return String
-	 */
-	public String getName ()
-	{
-		return this.name;
-	}
 
 }

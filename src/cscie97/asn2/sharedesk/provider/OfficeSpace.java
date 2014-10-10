@@ -36,6 +36,7 @@ public class OfficeSpace
 		this.officeSpaceGuid = officeSpaceGuid;
 	}
 	
+	
 	public OfficeSpace ()
 	{
 		this.capacity = new Capacity( null, null, null );
@@ -182,7 +183,7 @@ public class OfficeSpace
 	 * mutator method for rates attribute
 	 * @param rates
 	 */
-	public void setLocation ( List<Rate> rates )
+	public void setRates ( List<Rate> rates )
 	{
 		this.rates = rates;
 	}
@@ -191,7 +192,7 @@ public class OfficeSpace
 	 * accessor method for rates attribute
 	 * @return List<Rate>
 	 */
-	public List<Rate> geRate()
+	public List<Rate> geRates()
 	{
 		return this.rates;
 	}
@@ -264,7 +265,7 @@ public class OfficeSpace
 	 * mutator method for name attribute
 	 * @param name
 	 */
-	public void setRatings ( String  name )
+	public void setName ( String  name )
 	{
 		this.name = name;
 	}
