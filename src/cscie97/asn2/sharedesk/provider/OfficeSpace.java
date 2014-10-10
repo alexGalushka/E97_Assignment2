@@ -5,21 +5,57 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
+/**
+ * The Class OfficeSpace.
+ */
 public class OfficeSpace
 {
 	
+	/** The common access. */
 	private List<String> commonAccess;
+	
+	/** The capacity. */
 	private Capacity capacity;
+	
+	/** The facility. */
 	private Facility facility;
+	
+	/** The features. */
 	private Features features;
+	
+	/** The images. */
 	private List<Image> images;
+	
+	/** The location. */
 	private Location location;
+	
+	/** The rates. */
 	private List<Rate> rates;
+	
+	/** The ratings. */
 	private Map<String, Rating> ratings;
+	
+	/** The office space guid. */
 	private String officeSpaceGuid;
 	//office space name
+	/** The name. */
 	private String name; 
 	
+	/**
+	 * Instantiates a new office space.
+	 *
+	 * @param commonAccess the common access
+	 * @param capacity the capacity
+	 * @param facility the facility
+	 * @param features the features
+	 * @param images the images
+	 * @param location the location
+	 * @param rates the rates
+	 * @param ratings the ratings
+	 * @param name the name
+	 * @param officeSpaceGuid the office space guid
+	 */
 	public OfficeSpace ( List<String> commonAccess, Capacity capacity, Facility facility,
 			            Features features, List<Image> images, Location location,
 			            List<Rate> rates, Map<String, Rating> ratings, String name, String officeSpaceGuid )
@@ -37,6 +73,9 @@ public class OfficeSpace
 	}
 	
 	
+	/**
+	 * Instantiates a new office space.
+	 */
 	public OfficeSpace ()
 	{
 		this.capacity = new Capacity( null, null, null );
@@ -52,7 +91,8 @@ public class OfficeSpace
 	}
 	
 	/**
-	 * accessor method for officeSpaceGuid attribute
+	 * accessor method for officeSpaceGuid attribute.
+	 *
 	 * @return String
 	 */
 	public String getOfficeSpaceGuid ()
@@ -61,8 +101,9 @@ public class OfficeSpace
 	}
 	
 	/**
-	 * mutator method for officeSpaceGuid attribute
-	 * @param officeSpaceGuid
+	 * mutator method for officeSpaceGuid attribute.
+	 *
+	 * @param officeSpaceGuid the new office space guid
 	 */
 	public void setOfficeSpaceGuid ( String officeSpaceGuid )
 	{
@@ -70,8 +111,9 @@ public class OfficeSpace
 	}
 	
 	/**
-	 * mutator method for commonAccess attribute
-	 * @param commonAccess
+	 * mutator method for commonAccess attribute.
+	 *
+	 * @param commonAccess the new common access
 	 */
 	public void setCommonAccess ( List<String> commonAccess )
 	{
@@ -79,7 +121,8 @@ public class OfficeSpace
 	}
 	
 	/**
-	 * accessor method for commonAccess attribute
+	 * accessor method for commonAccess attribute.
+	 *
 	 * @return commonAccess
 	 */
 	public List<String> getCommonAccess()
@@ -89,8 +132,9 @@ public class OfficeSpace
 	
 	
 	/**
-	 * mutator method for capacity attribute
-	 * @param capacity
+	 * mutator method for capacity attribute.
+	 *
+	 * @param capacity the new capacity
 	 */
 	public void setCapacity ( Capacity capacity )
 	{
@@ -98,7 +142,8 @@ public class OfficeSpace
 	}
 	
 	/**
-	 * accessor method for capacity attribute
+	 * accessor method for capacity attribute.
+	 *
 	 * @return Capacity
 	 */
 	public Capacity getCapacity()
@@ -107,8 +152,9 @@ public class OfficeSpace
 	}
 	
 	/**
-	 * mutator method for facility attribute
-	 * @param facility
+	 * mutator method for facility attribute.
+	 *
+	 * @param facility the new facility
 	 */
 	public void setFacility ( Facility facility )
 	{
@@ -116,7 +162,8 @@ public class OfficeSpace
 	}
 	
 	/**
-	 * accessor method for facility attribute
+	 * accessor method for facility attribute.
+	 *
 	 * @return Facility
 	 */
 	public Facility getFacility()
@@ -125,8 +172,9 @@ public class OfficeSpace
 	}
 	
 	/**
-	 * mutator method for features attribute
-	 * @param features
+	 * mutator method for features attribute.
+	 *
+	 * @param features the new features
 	 */
 	public void setFeatures ( Features features )
 	{
@@ -134,7 +182,8 @@ public class OfficeSpace
 	}
 	
 	/**
-	 * accessor method for features attribute
+	 * accessor method for features attribute.
+	 *
 	 * @return Features
 	 */
 	public Features getFeatures()
@@ -144,8 +193,9 @@ public class OfficeSpace
 	
 
 	/**
-	 * mutator method for images attribute
-	 * @param images
+	 * mutator method for images attribute.
+	 *
+	 * @param images the new images
 	 */
 	public void setImages ( List<Image> images )
 	{
@@ -153,7 +203,8 @@ public class OfficeSpace
 	}
 	
 	/**
-	 * accessor method for images attribute
+	 * accessor method for images attribute.
+	 *
 	 * @return List<Image>
 	 */
 	public List<Image> getImages()
@@ -162,8 +213,9 @@ public class OfficeSpace
 	}
 	
 	/**
-	 * mutator method for location attribute
-	 * @param location
+	 * mutator method for location attribute.
+	 *
+	 * @param location the new location
 	 */
 	public void setLocation ( Location location )
 	{
@@ -171,7 +223,8 @@ public class OfficeSpace
 	}
 	
 	/**
-	 * accessor method for location attribute
+	 * accessor method for location attribute.
+	 *
 	 * @return Location
 	 */
 	public Location getLocation()
@@ -180,8 +233,9 @@ public class OfficeSpace
 	}
 	
 	/**
-	 * mutator method for rates attribute
-	 * @param rates
+	 * mutator method for rates attribute.
+	 *
+	 * @param rates the new rates
 	 */
 	public void setRates ( List<Rate> rates )
 	{
@@ -189,7 +243,8 @@ public class OfficeSpace
 	}
 	
 	/**
-	 * accessor method for rates attribute
+	 * accessor method for rates attribute.
+	 *
 	 * @return List<Rate>
 	 */
 	public List<Rate> geRates()
@@ -198,8 +253,9 @@ public class OfficeSpace
 	}
 	
 	/**
-	 * mutator method for ratings attribute
-	 * @param ratings
+	 * mutator method for ratings attribute.
+	 *
+	 * @param ratings the ratings
 	 */
 	public void setRatings ( Map<String, Rating> ratings )
 	{
@@ -207,7 +263,8 @@ public class OfficeSpace
 	}
 	
 	/**
-	 * accessor method for ratings attribute
+	 * accessor method for ratings attribute.
+	 *
 	 * @return Map<String, Rating>
 	 */
 	public Map<String, Rating> getRatings()
@@ -216,7 +273,8 @@ public class OfficeSpace
 	}
 	
 	/**
-	 * getter method for all ratings per office space
+	 * getter method for all ratings per office space.
+	 *
 	 * @return List<Rating>
 	 */
 	public List<Rating> getAllRatings()
@@ -228,9 +286,11 @@ public class OfficeSpace
 	}
 	
 	/**
-	 * mutator method for ratings association
-	 * @param ratings
-	 * @throws OfficeSpaceNotFoundException 
+	 * mutator method for ratings association.
+	 *
+	 * @param rating the rating
+	 * @param authorId the author id
+	 * @throws RatingNotFoundExcepion the rating not found excepion
 	 */
 	public void setRating( Rating rating, String authorId ) throws RatingNotFoundExcepion
 	{ 
@@ -245,9 +305,11 @@ public class OfficeSpace
 	}
 	
 	/**
-	 * accessor method for rating association
+	 * accessor method for rating association.
+	 *
+	 * @param authorId the author id
 	 * @return Rating
-	 * @throws RatingNotFoundExcepion 
+	 * @throws RatingNotFoundExcepion the rating not found excepion
 	 */
 	public Rating getRating( String authorId ) throws RatingNotFoundExcepion
 	{
@@ -262,8 +324,9 @@ public class OfficeSpace
 	}
 	
 	/**
-	 * mutator method for name attribute
-	 * @param name
+	 * mutator method for name attribute.
+	 *
+	 * @param name the new name
 	 */
 	public void setName ( String  name )
 	{
@@ -271,7 +334,8 @@ public class OfficeSpace
 	}
 	
 	/**
-	 * accessor method for name attribute
+	 * accessor method for name attribute.
+	 *
 	 * @return String
 	 */
 	public String geName()

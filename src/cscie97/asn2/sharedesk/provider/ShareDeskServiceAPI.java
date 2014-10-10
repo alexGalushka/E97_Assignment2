@@ -1,11 +1,21 @@
 package cscie97.asn2.sharedesk.provider;
 
+
+/**
+ * The Class ShareDeskServiceAPI.
+ */
 public class ShareDeskServiceAPI
 {
+	
+	/** The office provider service. */
 	private OfficeProviderService officeProviderService; 
 
+	/** The guid generator. */
 	private GuidGenerator guidGenerator;
 	
+	/**
+	 * Instantiates a new share desk service api.
+	 */
 	public ShareDeskServiceAPI() 
 	{
 		guidGenerator = new GuidGenerator();
@@ -13,8 +23,9 @@ public class ShareDeskServiceAPI
 	}
 			
 	/**
-	 * mutator method for officeProviderService association
-	 * @param officeProviderService
+	 * mutator method for officeProviderService association.
+	 *
+	 * @param officeProviderService the new office provider service
 	 */
 	public void setOfficeProviderService ( OfficeProviderService officeProviderService )
 	{
@@ -22,7 +33,8 @@ public class ShareDeskServiceAPI
 	}
 	
 	/**
-	 * accessor method for officeProviderService association
+	 * accessor method for officeProviderService association.
+	 *
 	 * @return officeProviderService
 	 */
 	public OfficeProviderService getOfficeProviderService ()
@@ -31,8 +43,9 @@ public class ShareDeskServiceAPI
 	}
 	
 	/**
-	 * mutator method for guidGenerator association
-	 * @param GuidGenerator
+	 * mutator method for guidGenerator association.
+	 *
+	 * @param guidGenerator the new guid generator
 	 */
 	public void setGuidGenerator ( GuidGenerator guidGenerator )
 	{
@@ -40,7 +53,8 @@ public class ShareDeskServiceAPI
 	}
 	
 	/**
-	 * accessor method for guidGenerator association
+	 * accessor method for guidGenerator association.
+	 *
 	 * @return guidGenerator
 	 */
 	public GuidGenerator getGuidGenerator ()

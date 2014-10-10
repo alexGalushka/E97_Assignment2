@@ -6,24 +6,53 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
+/**
+ * The Class OfficeProvider.
+ */
 public class OfficeProvider 
 {
+	
+	/** The picture. */
 	private URI picture;
+	
+	/** The contact. */
 	private ContactInfo contact;
+	
+	/** The office spaces map. */
 	private Map<String, OfficeSpace> officeSpacesMap;
+	
+	/** The provider ratings map. */
 	private Map<String, Rating> providerRatingsMap;
+	
+	/** The account. */
 	private Account account;
+	
+	/** The office provider guid. */
 	private String officeProviderGuid;
 	
+	/**
+	 * Instantiates a new office provider.
+	 */
 	public OfficeProvider ()
 	{
 		this.picture = null;
 		this.contact = new ContactInfo("", "", "", "", "", null);
 		this.officeSpacesMap = new HashMap<String, OfficeSpace>();
+		this.providerRatingsMap = new HashMap<String, Rating>();
 		this.account = new Account( 0 );
 		this.officeProviderGuid = "";
 	}
 	
+	/**
+	 * Instantiates a new office provider.
+	 *
+	 * @param picture the picture
+	 * @param contact the contact
+	 * @param officeSpaces the office spaces
+	 * @param account the account
+	 * @param officeProviderGuid the office provider guid
+	 */
 	public OfficeProvider ( URI picture, ContactInfo contact,
 			               Map<String, OfficeSpace> officeSpaces, Account account, String officeProviderGuid )
 	{
@@ -32,12 +61,14 @@ public class OfficeProvider
 		this.officeSpacesMap = officeSpaces;
 		this.account = account;
 		this.officeProviderGuid = officeProviderGuid;
+		this.providerRatingsMap = new HashMap<String, Rating>();
 	}
 	
 	
 	/**
-	 * mutator method for officeProviderGuid attribute
-	 * @param officeProviderGuid
+	 * mutator method for officeProviderGuid attribute.
+	 *
+	 * @param officeProviderGuid the new office provider guid
 	 */
 	public void setOfficeProviderGuid ( String officeProviderGuid )
 	{
@@ -45,7 +76,8 @@ public class OfficeProvider
 	}
 	
 	/**
-	 * accessor method for officeProviderGuid attribute
+	 * accessor method for officeProviderGuid attribute.
+	 *
 	 * @return String
 	 */
 	public String getOfficeProviderGuid ()
@@ -54,8 +86,9 @@ public class OfficeProvider
 	}
 	
 	/**
-	 * mutator method for account attribute
-	 * @param account
+	 * mutator method for account attribute.
+	 *
+	 * @param account the new account
 	 */
 	public void setAccount ( Account account )
 	{
@@ -63,7 +96,8 @@ public class OfficeProvider
 	}
 	
 	/**
-	 * accessor method for account attribute
+	 * accessor method for account attribute.
+	 *
 	 * @return Account
 	 */
 	public Account getAccount ()
@@ -72,8 +106,9 @@ public class OfficeProvider
 	}
 	
 	/**
-	 * mutator method for officeSpacesMap attribute
-	 * @param officeSpacesMap
+	 * mutator method for officeSpacesMap attribute.
+	 *
+	 * @param officeSpacesMap the office spaces map
 	 */
 	public void setOfficeSpaces ( Map<String, OfficeSpace> officeSpacesMap )
 	{
@@ -81,7 +116,8 @@ public class OfficeProvider
 	}
 	
 	/**
-	 * accessor method for officeSpacesMap attribute
+	 * accessor method for officeSpacesMap attribute.
+	 *
 	 * @return Map<String, OfficeSpace>
 	 */
 	public Map<String, OfficeSpace> getOfficeSpaces ()
@@ -90,8 +126,9 @@ public class OfficeProvider
 	}
 
 	/**
-	 * mutator method for providerRatingsMap attribute
-	 * @param providerRatingsMap
+	 * mutator method for providerRatingsMap attribute.
+	 *
+	 * @param providerRatingsMap the provider ratings map
 	 */
 	public void setProviderRatingsMap ( Map<String, Rating> providerRatingsMap )
 	{
@@ -99,7 +136,8 @@ public class OfficeProvider
 	}
 	
 	/**
-	 * accessor method for providerRatingsMap attribute
+	 * accessor method for providerRatingsMap attribute.
+	 *
 	 * @return Map<String, Rating>
 	 */
 	public Map<String, Rating> getProviderRatingsMap ()
@@ -108,7 +146,8 @@ public class OfficeProvider
 	}
 	
 	/**
-	 * getter method for all ratings per office provider
+	 * getter method for all ratings per office provider.
+	 *
 	 * @return List<Rating>
 	 */
 	public List<Rating> getAllRatings()
@@ -120,8 +159,9 @@ public class OfficeProvider
 	}
 	
 	/**
-	 * mutator method for contact attribute
-	 * @param contact
+	 * mutator method for contact attribute.
+	 *
+	 * @param contact the new contact
 	 */
 	public void setContact ( ContactInfo contact )
 	{
@@ -129,7 +169,8 @@ public class OfficeProvider
 	}
 	
 	/**
-	 * accessor method for contact attribute
+	 * accessor method for contact attribute.
+	 *
 	 * @return ContactInfo
 	 */
 	public ContactInfo getContact ()
@@ -138,8 +179,9 @@ public class OfficeProvider
 	}
 	
 	/**
-	 * mutator method for picture attribute
-	 * @param picture
+	 * mutator method for picture attribute.
+	 *
+	 * @param picture the new picture
 	 */
 	public void setPicture ( URI picture )
 	{
@@ -147,7 +189,8 @@ public class OfficeProvider
 	}
 	
 	/**
-	 * accessor method for picture attribute
+	 * accessor method for picture attribute.
+	 *
 	 * @return URI
 	 */
 	public URI getPicture ()

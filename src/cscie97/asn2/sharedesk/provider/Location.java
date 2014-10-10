@@ -1,11 +1,28 @@
 package cscie97.asn2.sharedesk.provider;
 
+
+/**
+ * The Class Location.
+ */
 public class Location
 {
+	
+	/** The longitude. */
 	private Float longitude;
+	
+	/** The latitude. */
 	private Float latitude;
+	
+	/** The address. */
 	private Address address;
 	
+	/**
+	 * Instantiates a new location.
+	 *
+	 * @param address the address
+	 * @param longitude the longitude
+	 * @param latitude the latitude
+	 */
 	public Location (Address address, Float longitude, Float latitude)
 	{
 		this.address = address;
@@ -14,8 +31,9 @@ public class Location
 	}
 
 	/**
-	 * mutator method for longitude attribute
-	 * @param longitude
+	 * mutator method for longitude attribute.
+	 *
+	 * @param longitude the new longitude
 	 */
 	public void setLongitude ( Float longitude )
 	{
@@ -23,7 +41,8 @@ public class Location
 	}
 	
 	/**
-	 * accessor method for longitude attribute
+	 * accessor method for longitude attribute.
+	 *
 	 * @return Float
 	 */
 	public Float getLongitude ()
@@ -32,8 +51,9 @@ public class Location
 	}
 	
 	/**
-	 * mutator method for latitude attribute
-	 * @param latitude
+	 * mutator method for latitude attribute.
+	 *
+	 * @param latitude the new latitude
 	 */
 	public void setLatitude ( Float latitude )
 	{
@@ -41,7 +61,8 @@ public class Location
 	}
 	
 	/**
-	 * accessor method for latitude attribute
+	 * accessor method for latitude attribute.
+	 *
 	 * @return Float
 	 */
 	public Float getLatitude ()
@@ -50,8 +71,9 @@ public class Location
 	}
 	
 	/**
-	 * mutator method for address attribute
-	 * @param address
+	 * mutator method for address attribute.
+	 *
+	 * @param address the new address
 	 */
 	public void setAddress ( Address address )
 	{
@@ -59,7 +81,8 @@ public class Location
 	}
 	
 	/**
-	 * accessor method for address attribute
+	 * accessor method for address attribute.
+	 *
 	 * @return Address
 	 */
 	public Address getAddress ()

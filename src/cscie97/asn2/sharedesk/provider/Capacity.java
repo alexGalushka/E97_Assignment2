@@ -1,11 +1,28 @@
 package cscie97.asn2.sharedesk.provider;
 
+
+/**
+ * The Class Capacity.
+ */
 public class Capacity
 {
+	
+	/** The number of people. */
 	private Integer numberOfPeople;
+	
+	/** The work spaces. */
 	private Integer workSpaces;
+	
+	/** The square footage. */
 	private Float squareFootage;
 	
+	/**
+	 * Instantiates a new capacity.
+	 *
+	 * @param numberOfPeople the number of people
+	 * @param workSpaces the work spaces
+	 * @param squareFootage the square footage
+	 */
 	public Capacity ( Integer numberOfPeople, Integer workSpaces, Float squareFootage )
 	{
 		this.workSpaces = workSpaces;
@@ -14,8 +31,9 @@ public class Capacity
 	}
 	
 	/**
-	 * mutator method for numberOfPeople attribute
-	 * @param numberOfPeople
+	 * mutator method for numberOfPeople attribute.
+	 *
+	 * @param numberOfPeople the new number of people
 	 */
 	public void setNumberOfPeople ( Integer numberOfPeople )
 	{
@@ -23,7 +41,8 @@ public class Capacity
 	}
 	
 	/**
-	 * accessor method for numberOfPeople attribute
+	 * accessor method for numberOfPeople attribute.
+	 *
 	 * @return Integer
 	 */
 	public Integer getNumberOfPeople ()
@@ -32,8 +51,9 @@ public class Capacity
 	}
 	
 	/**
-	 * mutator method for workSpaces attribute
-	 * @param workSpaces
+	 * mutator method for workSpaces attribute.
+	 *
+	 * @param workSpaces the new work spaces
 	 */
 	public void setWorkSpaces ( Integer workSpaces )
 	{
@@ -41,7 +61,8 @@ public class Capacity
 	}
 	
 	/**
-	 * accessor method for workSpaces attribute
+	 * accessor method for workSpaces attribute.
+	 *
 	 * @return Integer
 	 */
 	public Integer getWorkSpaces ()
@@ -50,8 +71,9 @@ public class Capacity
 	}
 	
 	/**
-	 * mutator method for squareFootage attribute
-	 * @param squareFootage
+	 * mutator method for squareFootage attribute.
+	 *
+	 * @param squareFootage the new square footage
 	 */
 	public void setSquareFootage ( Float squareFootage )
 	{
@@ -59,7 +81,8 @@ public class Capacity
 	}
 	
 	/**
-	 * accessor method for squareFootage attribute
+	 * accessor method for squareFootage attribute.
+	 *
 	 * @return Integer
 	 */
 	public Float getSquareFootage ()

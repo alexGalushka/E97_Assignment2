@@ -6,10 +6,19 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
+/**
+ * The Class OfficeProviderService.
+ */
 public class OfficeProviderService
 {
+	
+	/** The office provider map. */
 	private Map<String, OfficeProvider> officeProviderMap;
 	
+	/**
+	 * Instantiates a new office provider service.
+	 */
 	public OfficeProviderService ()
 	{
 		this.officeProviderMap = new HashMap<String, OfficeProvider>();
@@ -17,11 +26,12 @@ public class OfficeProviderService
 	
 	/**
 	 * Creates a new provider: add provider to the providerMap;
-	 * check if it exists already and throws ProviderAlreadyExistException if it does
-	 * @param authToken
-	 * @param provider
-	 * @param providerId
-	 * @throws ProviderAlreadyExistsException
+	 * check if it exists already and throws ProviderAlreadyExistException if it does.
+	 *
+	 * @param authToken the auth token
+	 * @param provider the provider
+	 * @param providerId the provider id
+	 * @throws ProviderAlreadyExistsException the provider already exists exception
 	 */
 	public void createProvider ( String authToken, OfficeProvider provider, String providerId ) throws ProviderAlreadyExistsException
 	{
@@ -37,11 +47,12 @@ public class OfficeProviderService
 	
 	/**
 	 * Returns provider per passed in providerId,
-	 * if there is no match – throws ProviderNotFoundException 
-	 * @param authToken
-	 * @param providerId
-	 * @return
-	 * @throws ProviderNotFoundException
+	 * if there is no match – throws ProviderNotFoundException .
+	 *
+	 * @param authToken the auth token
+	 * @param providerId the provider id
+	 * @return the provider
+	 * @throws ProviderNotFoundException the provider not found exception
 	 */
 	public OfficeProvider getProvider( String authToken, String providerId ) throws ProviderNotFoundException
 	{
@@ -57,8 +68,9 @@ public class OfficeProviderService
 	}
 	
 	/**
-	 * Returns whole list of providers
-	 * @param authToken
+	 * Returns whole list of providers.
+	 *
+	 * @param authToken the auth token
 	 * @return List<OfficeProvider>
 	 */
 	public List<OfficeProvider> getProviderList ( String authToken )
@@ -72,10 +84,11 @@ public class OfficeProviderService
 	/**
 	 * Updates the provider, new Provider instance has to be passed in.
 	 * If providerId not found, throws ProviderNotFoundException.
-	 * @param authToken
-	 * @param providerId
-	 * @param provider
-	 * @throws ProviderNotFoundException
+	 *
+	 * @param authToken the auth token
+	 * @param providerId the provider id
+	 * @param provider the provider
+	 * @throws ProviderNotFoundException the provider not found exception
 	 */
 	public void updateProvider ( String authToken, String providerId, OfficeProvider provider) throws ProviderNotFoundException
 	{
@@ -92,9 +105,10 @@ public class OfficeProviderService
 	/**
 	 * Deleted the provider.
 	 * If providerId not found, throws ProviderNotFoundException.
-	 * @param authToken
-	 * @param providerId
-	 * @throws ProviderNotFoundException
+	 *
+	 * @param authToken the auth token
+	 * @param providerId the provider id
+	 * @throws ProviderNotFoundException the provider not found exception
 	 */
 	public void deleteProvider ( String authToken, String providerId ) throws ProviderNotFoundException
 	{
@@ -112,12 +126,13 @@ public class OfficeProviderService
 	 * Rate the provider. Rating is an integer from 0 to 5. The rating value is added to officeProviderRatingsMap.
 	 * if it is found throw RatingAlreadyExistsException. ProviderId is checked as well if it's not found
 	 *  - ProviderNotFoundException is thrown 
-	 * @param authToken
-	 * @param providerId
-	 * @param renterId
-	 * @param rating
-	 * @throws RatingAlreadyExistsException
-	 * @throws OfficeSpaceNotFoundException
+	 *
+	 * @param authToken the auth token
+	 * @param providerId the provider id
+	 * @param renterId the renter id
+	 * @param rating the rating
+	 * @throws RatingAlreadyExistsException the rating already exists exception
+	 * @throws ProviderNotFoundException the provider not found exception
 	 */
 	public void rateProvider ( String authToken, String providerId,
 			                   String renterId , Rating rating ) throws RatingAlreadyExistsException, ProviderNotFoundException 
@@ -148,12 +163,13 @@ public class OfficeProviderService
 	/**
 	 * The Rating correspondent to renterId is to be removed from officeProviderRatingMap within the officeSpaceMap,
 	 * if office space id is not found - ProviderNotFoundException is thrown;
-	 * if renterId is not found - RatingNotFoundExcepion is thrown
-	 * @param authToken
-	 * @param providerId
-	 * @param renterId
-	 * @throws RatingNotFoundExcepion
-	 * @throws ProviderNotFoundException
+	 * if renterId is not found - RatingNotFoundExcepion is thrown.
+	 *
+	 * @param authToken the auth token
+	 * @param providerId the provider id
+	 * @param renterId the renter id
+	 * @throws RatingNotFoundExcepion the rating not found excepion
+	 * @throws ProviderNotFoundException the provider not found exception
 	 */
 	public void removeProviderRating ( String authToken, String providerId,
 			                           String renterId) throws RatingNotFoundExcepion, ProviderNotFoundException
@@ -181,6 +197,14 @@ public class OfficeProviderService
 		}
 	}
 	
+	/**
+	 * Gets the rating list.
+	 *
+	 * @param authToken the auth token
+	 * @param providerId the provider id
+	 * @return the rating list
+	 * @throws OfficeSpaceNotFoundException the office space not found exception
+	 */
 	public List<Rating> getRatingList ( String authToken, String providerId ) throws OfficeSpaceNotFoundException
 	{
 		if ( officeProviderMap.containsKey( providerId ) )

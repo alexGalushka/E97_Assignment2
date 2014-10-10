@@ -4,23 +4,37 @@ import java.util.List;
 
 
 
+
+/**
+ * The Class Features.
+ */
 public class Features
 {
 
+	/** The all features. */
 	private List<String> allFeatures;
 	
+	/**
+	 * Instantiates a new features.
+	 *
+	 * @param allFeatures the all features
+	 */
 	public Features ( List<String> allFeatures )
 	{
 		this.allFeatures = allFeatures;
 	}
 	
+	/**
+	 * Instantiates a new features.
+	 */
 	public Features ()
 	{
 		this.allFeatures = new ArrayList<String>();
 	}
 	
 	/**
-	 * accessor method for allFeatures attribute
+	 * accessor method for allFeatures attribute.
+	 *
 	 * @return List<String>
 	 */
 	public List<String> getAllFeatures ()
@@ -29,8 +43,9 @@ public class Features
 	}
 	
 	/**
-	 * this method adds multiple features at a time to the list of all features
-	 * @param someFeatures
+	 * this method adds multiple features at a time to the list of all features.
+	 *
+	 * @param someFeatures the some features
 	 */
 	public void addMultipleFeatures ( List<String> someFeatures )
 	{
@@ -41,8 +56,9 @@ public class Features
 	}
 	
 	/**
-	 * this method adds a feature to the list of all features
-	 * @param feature
+	 * this method adds a feature to the list of all features.
+	 *
+	 * @param feature the feature
 	 */
 	public void addFeature( String feature )
 	{
@@ -50,9 +66,10 @@ public class Features
 	}
 	
 	/**
-	 * this method removes a feature from the list of all features
-	 * @param feature
-	 * @throws FeatureNotFoundException 
+	 * this method removes a feature from the list of all features.
+	 *
+	 * @param feature the feature
+	 * @throws FeatureNotFoundException the feature not found exception
 	 */
 	public void removeFeature( String feature ) throws FeatureNotFoundException
 	{

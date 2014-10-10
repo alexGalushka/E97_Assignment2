@@ -1,15 +1,28 @@
 package cscie97.asn2.sharedesk.provider;
 
+
+/**
+ * The Class RatingNotFoundExcepion.
+ */
 public class RatingNotFoundExcepion extends Exception
 {	
-	/**
-	 * serialization
-	 */
+	
+	/** serialization. */
 	private static final long serialVersionUID = 5398777165845179444L;
+	
+	/**
+	 * Instantiates a new rating not found excepion.
+	 */
 	public RatingNotFoundExcepion()
 	{ 
 		super();
 	}
+	
+	/**
+	 * Instantiates a new rating not found excepion.
+	 *
+	 * @param message the message
+	 */
 	public RatingNotFoundExcepion(String message) 
 	{
 		super(message);

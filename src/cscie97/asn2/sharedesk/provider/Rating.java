@@ -1,14 +1,35 @@
 package cscie97.asn2.sharedesk.provider;
 
+
+/**
+ * The Class Rating.
+ */
 public class Rating 
 {
 
+	/** The authors name. */
 	private String authorsName;
+	
+	/** The authors id. */
 	private String authorsId;
+	
+	/** The comment. */
 	private String comment;
+	
+	/** The date. */
 	private String date;
+	
+	/** The stars. */
 	private Integer stars;
 	
+	/**
+	 * Instantiates a new rating.
+	 *
+	 * @param authorsName the authors name
+	 * @param comment the comment
+	 * @param date the date
+	 * @param stars the stars
+	 */
 	public Rating (	String authorsName, String comment,
 			        String date, Integer stars )
 	{
@@ -19,8 +40,9 @@ public class Rating
 	}
 	
 	/**
-	 * mutator method for authorsName attribute
-	 * @param period
+	 * mutator method for authorsName attribute.
+	 *
+	 * @param authorsName the new authors name
 	 */
 	public void setAuthorsName ( String authorsName )
 	{
@@ -28,7 +50,8 @@ public class Rating
 	}
 	
 	/**
-	 * accessor method for authorsName attribute
+	 * accessor method for authorsName attribute.
+	 *
 	 * @return String
 	 */
 	public String getAuthorsName ()
@@ -37,8 +60,9 @@ public class Rating
 	}
 	
 	/**
-	 * mutator method for authorsId attribute
-	 * @param period
+	 * mutator method for authorsId attribute.
+	 *
+	 * @param authorsId the new authors id
 	 */
 	public void setAuthorsId ( String authorsId )
 	{
@@ -46,7 +70,8 @@ public class Rating
 	}
 	
 	/**
-	 * accessor method for authorsId attribute
+	 * accessor method for authorsId attribute.
+	 *
 	 * @return String
 	 */
 	public String getAuthorsId ()
@@ -55,8 +80,9 @@ public class Rating
 	}
 	
 	/**
-	 * mutator method for comment attribute
-	 * @param comment
+	 * mutator method for comment attribute.
+	 *
+	 * @param comment the new comment
 	 */
 	public void setComment ( String comment )
 	{
@@ -64,7 +90,8 @@ public class Rating
 	}
 	
 	/**
-	 * accessor method for comment attribute
+	 * accessor method for comment attribute.
+	 *
 	 * @return String
 	 */
 	public String getComment ()
@@ -73,8 +100,9 @@ public class Rating
 	}
 	
 	/**
-	 * mutator method for date attribute
-	 * @param date
+	 * mutator method for date attribute.
+	 *
+	 * @param date the new date
 	 */
 	public void setDate ( String date )
 	{
@@ -82,7 +110,8 @@ public class Rating
 	}
 	
 	/**
-	 * accessor method for date attribute
+	 * accessor method for date attribute.
+	 *
 	 * @return String
 	 */
 	public String getDate ()
@@ -91,8 +120,9 @@ public class Rating
 	}
 	
 	/**
-	 * mutator method for stars attribute
-	 * @param stars
+	 * mutator method for stars attribute.
+	 *
+	 * @param stars the new stars
 	 */
 	public void setStars ( Integer stars )
 	{
@@ -100,7 +130,8 @@ public class Rating
 	}
 	
 	/**
-	 * accessor method for stars attribute
+	 * accessor method for stars attribute.
+	 *
 	 * @return Integer
 	 */
 	public Integer getStars ()

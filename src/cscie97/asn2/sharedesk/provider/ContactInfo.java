@@ -1,16 +1,41 @@
 package cscie97.asn2.sharedesk.provider;
 
+
+/**
+ * The Class ContactInfo.
+ */
 public class ContactInfo
 {
+	
+	/** The first name. */
 	private String firstName;
+	
+	/** The last name. */
 	private String lastName;
+	
+	/** The email. */
 	private String email;
 	//the following format should be enforced: +1(617)-777-7777
+	/** The phone number. */
 	private String phoneNumber;
+	
+	/** The date of birth. */
 	private String dateOfBirth;
+	
+	/** The address. */
 	private Address address;
 	
 	
+	/**
+	 * Instantiates a new contact info.
+	 *
+	 * @param firstName the first name
+	 * @param lastName the last name
+	 * @param email the email
+	 * @param phoneNumber the phone number
+	 * @param dateOfBirth the date of birth
+	 * @param address the address
+	 */
 	public ContactInfo (String firstName, String lastName, String email, 
 						String phoneNumber, String dateOfBirth, Address address)
 	{
@@ -22,8 +47,9 @@ public class ContactInfo
 	}
 	
 	/**
-	 * mutator method for firstName attribute
-	 * @param firstName
+	 * mutator method for firstName attribute.
+	 *
+	 * @param firstName the new first name
 	 */
 	public void setFirstName ( String firstName )
 	{
@@ -31,7 +57,8 @@ public class ContactInfo
 	}
 	
 	/**
-	 * accessor method for firstName attribute
+	 * accessor method for firstName attribute.
+	 *
 	 * @return String
 	 */
 	public String getFirstName ()
@@ -40,8 +67,9 @@ public class ContactInfo
 	}
 	
 	/**
-	 * mutator method for firstName attribute
-	 * @param lastName
+	 * mutator method for firstName attribute.
+	 *
+	 * @param lastName the new last name
 	 */
 	public void setLastName ( String lastName )
 	{
@@ -49,7 +77,8 @@ public class ContactInfo
 	}
 	
 	/**
-	 * accessor method for lastName attribute
+	 * accessor method for lastName attribute.
+	 *
 	 * @return String
 	 */
 	public String getLastName ()
@@ -58,8 +87,9 @@ public class ContactInfo
 	}
 	
 	/**
-	 * mutator method for email attribute
-	 * @param email
+	 * mutator method for email attribute.
+	 *
+	 * @param email the new email
 	 */
 	public void setEmail ( String email )
 	{
@@ -67,7 +97,8 @@ public class ContactInfo
 	}
 	
 	/**
-	 * accessor method for email attribute
+	 * accessor method for email attribute.
+	 *
 	 * @return String
 	 */
 	public String getEmail ()
@@ -76,8 +107,9 @@ public class ContactInfo
 	}
 	
 	/**
-	 * mutator method for phoneNumber attribute
-	 * @param phoneNumber
+	 * mutator method for phoneNumber attribute.
+	 *
+	 * @param phoneNumber the new phone number
 	 */
 	public void setPhoneNumber ( String phoneNumber )
 	{
@@ -85,7 +117,8 @@ public class ContactInfo
 	}
 	
 	/**
-	 * accessor method for phoneNumber attribute
+	 * accessor method for phoneNumber attribute.
+	 *
 	 * @return String
 	 */
 	public String getPhoneNumber ()
@@ -94,8 +127,9 @@ public class ContactInfo
 	}
 	
 	/**
-	 * mutator method for address attribute
-	 * @param address
+	 * mutator method for address attribute.
+	 *
+	 * @param address the new address
 	 */
 	public void setAddress ( Address address )
 	{
@@ -103,7 +137,8 @@ public class ContactInfo
 	}
 	
 	/**
-	 * accessor method for address attribute
+	 * accessor method for address attribute.
+	 *
 	 * @return Address
 	 */
 	public Address getAddress ()
@@ -112,8 +147,9 @@ public class ContactInfo
 	}
 	
 	/**
-	 * mutator method for dateOfBirth attribute
-	 * @param dateOfBirth
+	 * mutator method for dateOfBirth attribute.
+	 *
+	 * @param dateOfBirth the new date of birth
 	 */
 	public void setDateOfBirth ( String dateOfBirth )
 	{
@@ -121,7 +157,8 @@ public class ContactInfo
 	}
 	
 	/**
-	 * accessor method for dateOfBirth attribute
+	 * accessor method for dateOfBirth attribute.
+	 *
 	 * @return String
 	 */
 	public String getDateOfBirth ()

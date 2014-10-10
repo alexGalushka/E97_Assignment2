@@ -1,12 +1,29 @@
 package cscie97.asn2.sharedesk.provider;
 import java.net.URI;
 
+
+/**
+ * The Class Image.
+ */
 public class Image
 {
+	
+	/** The description. */
 	private String description; 
+	
+	/** The name. */
 	private String name;
+	
+	/** The uri. */
 	private URI uri;
 	
+	/**
+	 * Instantiates a new image.
+	 *
+	 * @param desciption the desciption
+	 * @param name the name
+	 * @param uri the uri
+	 */
 	public Image ( String desciption, String name, URI uri )
 	{
 		this.description = desciption;
@@ -15,8 +32,9 @@ public class Image
 	}
 	
 	/**
-	 * mutator method for description attribute
-	 * @param description
+	 * mutator method for description attribute.
+	 *
+	 * @param description the new description
 	 */
 	public void setDescription ( String description )
 	{
@@ -24,7 +42,8 @@ public class Image
 	}
 	
 	/**
-	 * accessor method for description attribute
+	 * accessor method for description attribute.
+	 *
 	 * @return String
 	 */
 	public String getDescription ()
@@ -33,8 +52,9 @@ public class Image
 	}
 	
 	/**
-	 * mutator method for name attribute
-	 * @param name
+	 * mutator method for name attribute.
+	 *
+	 * @param name the new name
 	 */
 	public void setName ( String name )
 	{
@@ -42,7 +62,8 @@ public class Image
 	}
 	
 	/**
-	 * accessor method for name attribute
+	 * accessor method for name attribute.
+	 *
 	 * @return String
 	 */
 	public String getName ()
@@ -51,8 +72,9 @@ public class Image
 	}
 	
 	/**
-	 * mutator method for uri attribute
-	 * @param uri
+	 * mutator method for uri attribute.
+	 *
+	 * @param uri the new uri
 	 */
 	public void setUri ( URI uri )
 	{
@@ -60,7 +82,8 @@ public class Image
 	}
 	
 	/**
-	 * accessor method for uri attribute
+	 * accessor method for uri attribute.
+	 *
 	 * @return URI
 	 */
 	public URI getUri ()
